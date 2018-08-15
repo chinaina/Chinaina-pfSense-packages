@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<pfsensepkgs>
+	<package>
+		<name>Light2guardian</name>
+		<descr><![CDATA[Light2guardian is a high performance web proxy reporting tool for E2guardian package.
+			&lt;strong&gt;Requires E2guardian package.&lt;/strong&gt;]]></descr>
+		<website></website>
+		<version>%%PKGVERSION%%</version>
+		<configurationfile>lightsquid.xml</configurationfile>
+		<noembedded>true</noembedded>
+	</package>
+</pfsensepkgs>
