@@ -1,15 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=	Light2guardian
-PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTNAME=	pfSense-pkg-Lightsquid
+PORTVERSION=	3.0.6
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ferreira.douglas@live.com
-COMMENT=	pfSense package Light2guardian
+MAINTAINER=	coreteam@pfsense.org
+COMMENT=	pfSense package Lightsquid
 
 LICENSE=	APACHE20
 
