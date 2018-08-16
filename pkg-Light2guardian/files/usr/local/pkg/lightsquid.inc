@@ -158,8 +158,8 @@ function lightsquid_write_webconfig() {
 	$lighttpd_ls_auth_path = "/var/etc/lightsquid/.passwd";
 	$lighttpd_ls_cert_path = "/var/etc/lightsquid/cert.pem";
 
-	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
+	if (is_array($config['installedpackages']['light2guardian']['config'][0])) {
+		$lightsquid_config = $config['installedpackages']['light2guardian']['config'][0];
 	} else {
 		return;
 	}
@@ -341,8 +341,8 @@ function lightsquid_resync() {
 	$lsconf_var[LS_VAR_SQUIDLOGTYPE]= LS_DEF_SQUIDLOGTYPE;
 
 	// Update variables from package GUI config
-	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
+	if (is_array($config['installedpackages']['light2guardian']['config'][0])) {
+		$lightsquid_config = $config['installedpackages']['light2guardian']['config'][0];
 
 		if (isset($lightsquid_config[LS_XML_LANG]) and !empty($lightsquid_config[LS_XML_LANG])) {
 			$lsconf_var[LS_VAR_LANG] = "\"" . $lightsquid_config[LS_XML_LANG] . "\"";
@@ -418,8 +418,8 @@ function lightsquid_resync() {
 /* Configure scheduled reports updates via cron */
 function lightsquid_setup_cron($active=false) {
 	global $config;
-	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$cron_schedule = $config['installedpackages']['lightsquid']['config'][0][LS_XML_SHEDULERTIME];
+	if (is_array($config['installedpackages']['light2guardian']['config'][0])) {
+		$cron_schedule = $config['installedpackages']['light2guardian']['config'][0][LS_XML_SHEDULERTIME];
 	} else {
 		$cron_schedule = '';
 	}
@@ -521,8 +521,8 @@ function lightsquid_validate_input($post, &$input_errors) {
 	global $config;
 
 	if ($post['navto_lightsquid'] == 'Open Lightsquid') {
-		if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-			$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
+		if (is_array($config['installedpackages']['light2guardian']['config'][0])) {
+			$lightsquid_config = $config['installedpackages']['light2guardian']['config'][0];
 		} else {
 			return;
 		}
@@ -577,8 +577,8 @@ function lightsquid_validate_input($post, &$input_errors) {
 //	}
 	
 	/* 'Skip URL(s)' validation */
-	if ($post['lightsquid_skipurl'] != "") {
-		$hosts = explode("|", $post['lightsquid_skipurl']);
+	if ($post['light2guardian_skipurl'] != "") {
+		$hosts = explode("|", $post['light2guardian_skipurl']);
 		foreach ($hosts as $host) {
 			$host = trim($host);
 			if (!is_ipaddr($host) && !is_hostname($host) && !is_domain($host)) {
