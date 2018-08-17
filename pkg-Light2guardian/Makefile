@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		pfSense-pkg-Light2guardian
-PORTVERSION=	0.0.1_2
+PORTVERSION=	0.0.1
 PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=	# empty
