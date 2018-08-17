@@ -44,4 +44,4 @@ share/lightsquid/tpl/novosea/user_month.html
 share/lightsquid/tpl/novosea/user_time.html
 share/lightsquid/tpl/novosea/whousesite.html
 %%DATADIR%%/info.xml
-%%DATADIR%%/etc/inc/priv
+/etc/inc/priv
