@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=		pfSense-pkg-Lightsquid
+PORTNAME=		pfSense-pkg-Light2guardian
 PORTVERSION=	0.0.1
 PORTREVISION=	1
 CATEGORIES=		www
