@@ -1,28 +1,28 @@
 # $FreeBSD$
 
-PORTNAME=	pfSense-pkg-Lightsquid
-PORTVERSION=	3.0.6
-PORTREVISION=	4
-CATEGORIES=	www
+PORTNAME=		pfSense-pkg-Light2guardian
+PORTVERSION=	0.0.1_2
+PORTREVISION=	1
+CATEGORIES=		www
 MASTER_SITES=	# empty
-DISTFILES=	# empty
+DISTFILES=		# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	coreteam@pfsense.org
-COMMENT=	pfSense package Lightsquid
+MAINTAINER=		ferreira.douglas@live.com
+COMMENT=		pfSense package Light2guardian
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/lightsquid/ip2name.list:www/lightsquid \
-		${LOCALBASE}/sbin/lighttpd:www/lighttpd
+				${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
-CONFLICTS=	pfSense-base-nanobsd-[0-9]*
+CONFLICTS=		pfSense-base-nanobsd-[0-9]*
 
-NO_BUILD=	yes
-NO_MTREE=	yes
+NO_BUILD=		yes
+NO_MTREE=		yes
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_FILES=		pkg-install pkg-deinstall
+SUB_LIST=		PORTNAME=${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
