@@ -45,4 +45,4 @@ share/lightsquid/tpl/novosea/user_time.html
 share/lightsquid/tpl/novosea/whousesite.html
 %%DATADIR%%/info.xml
 @dir /etc/inc/priv/
-@dir /etc/inc/
+@dir /etc/inc
