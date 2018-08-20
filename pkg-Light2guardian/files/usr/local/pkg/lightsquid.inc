@@ -548,10 +548,10 @@ function lightsquid_validate_input($post, &$input_errors) {
 		header("Location: {$navto_proto}://{$server_host}:{$lightsquid_config['lighttpd_ls_port']}/");
 		exit;
 	}
-	if ($post['navto_sqstat'] == 'Open sqstat') {
-		header("Location: /sqstat/sqstat.php");
-		exit;
-	}
+//	if ($post['navto_sqstat'] == 'Open sqstat') {
+//		header("Location: /sqstat/sqstat.php");
+//		exit;
+//	}
 	/* Manual reports refresh; only allow to run if the configuration file exists already! */
 	if (!empty($post['refreshnow']) || !empty($post['refreshfull'])) {
 		$lsconf_file = LS_CONFIGPATH . "/" . LS_CONFIGFILE;

@@ -147,7 +147,9 @@
 			<description>
 				<![CDATA[
 				<button type="submit" class="btn btn-info" name="navto_lightsquid" id="navto_lightsquid" value="Open Lightsquid"><i class="fa fa-sign-in icon-embed-btn"></i>Open Lightsquid</button>
+/*
 				<button type="submit" class="btn btn-info" name="navto_sqstat" id="navto_sqstat" value="Open sqstat"><i class="fa fa-sign-in icon-embed-btn"></i>Open sqstat</button>
+*/
 				]]>
 			</description>
 		</field>
