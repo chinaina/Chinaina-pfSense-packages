@@ -135,7 +135,7 @@ function lightsquid_write_webconfig() {
 	}
 
 	if (empty($lightsquid_config['lighttpd_ls_port'])) {
-		$lightsquid_config['lighttpd_ls_port'] = "7445";
+		$lightsquid_config['lighttpd_ls_port'] = "14902";
 	}
 	if (empty($lightsquid_config['lighttpd_ls_user'])) {
 		$lightsquid_config['lighttpd_ls_user'] = "admin";
@@ -538,7 +538,7 @@ function lightsquid_validate_input($post, &$input_errors) {
 		}
 		list($server_host, $server_port) = explode(':', $_SERVER['HTTP_HOST']);
 		if (empty($lightsquid_config['lighttpd_ls_port'])) {
-			$lightsquid_config['lighttpd_ls_port'] = "7445";
+			$lightsquid_config['lighttpd_ls_port'] = "14902";
 		}
 		if (!isset($lightsquid_config['lighttpd_ls_ssl']) || ($lightsquid_config['lighttpd_ls_ssl'] == "on")) {
 			$navto_proto = "https";

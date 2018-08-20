@@ -27,11 +27,11 @@
 	]]>
 	</copyright>
 	<name>lightsquid</name>
-	<title>Squid Proxy Reports: Settings</title>
+	<title>E2guardian Proxy Reports: Settings</title>
 	<category>Status</category>
 	<include_file>/usr/local/pkg/lightsquid.inc</include_file>
 	<menu>
-		<name>Squid Proxy Reports</name>
+		<name>E2guardian Proxy Reports</name>
 		<section>Status</section>
 		<url>/pkg_edit.php?xml=lightsquid.xml</url>
 	</menu>
@@ -39,7 +39,7 @@
 		<name>lightsquid_web</name>
 		<rcfile>lighttpd_ls.sh</rcfile>
 		<executable>lighttpd_ls</executable>
-		<description>Lightsquid Web Server</description>
+		<description>Light2guardian Web Server</description>
 	</service>
 	<fields>
 		<field>
@@ -91,30 +91,30 @@
 			<type>listtopic</type>
 		</field>
 		<field>
-			<fielddescr>Lightsquid Web Port</fielddescr>
+			<fielddescr>Light2guardian Web Port</fielddescr>
 			<fieldname>lighttpd_ls_port</fieldname>
 			<description>
 				<![CDATA[
 				Port the lighttpd web server for Lightsquid will listen on.
-				<span class="text-info">(Default: 7445)</span>
+				<span class="text-info">(Default: 14902)</span>
 				]]>
 			</description>
 			<type>input</type>
 			<size>5</size>
-			<default_value>7445</default_value>
+			<default_value>14902</default_value>
 			<required/>
 		</field>
 		<field>
-			<fielddescr>Lightsquid Web SSL</fielddescr>
+			<fielddescr>Light2guardian Web SSL</fielddescr>
 			<fieldname>lighttpd_ls_ssl</fieldname>
-			<description>Use SSL for Lightsquid Web Access</description>
-			<sethelp>This option configures the Lightsquid web server to use SSL and uses the WebGUI HTTPS certificate.</sethelp>
+			<description>Use SSL for Light2guardian Web Access</description>
+			<sethelp>This option configures the Light2guardian web server to use SSL and uses the WebGUI HTTPS certificate.</sethelp>
 			<type>checkbox</type>
 			<default_value>on</default_value>
 		</field>
 
 		<field>
-			<fielddescr>Lightsquid Web User</fielddescr>
+			<fielddescr>Light2guardian Web User</fielddescr>
 			<fieldname>lighttpd_ls_user</fieldname>
 			<description>
 				<![CDATA[
@@ -128,7 +128,7 @@
 			<required/>
 		</field>
 		<field>
-			<fielddescr>Lightsquid Web Password</fielddescr>
+			<fielddescr>Light2guardian Web Password</fielddescr>
 			<fieldname>lighttpd_ls_password</fieldname>
 			<description>
 				<![CDATA[
