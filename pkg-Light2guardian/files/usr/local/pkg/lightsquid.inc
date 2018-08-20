@@ -577,7 +577,7 @@ function lightsquid_validate_input($post, &$input_errors) {
 	}
 
 	/* Check E2guardian Log File Format */
-	if ($config['installedpackages']['e2guardianlog']['config'][0]['logfileformat'] != "3")) {
+	if ($config['installedpackages']['e2guardianlog']['config'][0]['logfileformat'] != "3") {
 		$input_errors[] = "Please, change de Log File Format to 'Squid Log File Format' in E2guardian package 'Report and Log' settings first.";
 	}
 
