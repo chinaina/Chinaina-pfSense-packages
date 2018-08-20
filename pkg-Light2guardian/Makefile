@@ -30,7 +30,6 @@ do-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/pkg
 	${MKDIR} ${STAGEDIR}/etc/inc/priv
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/sqstat
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/lightsquid/tpl/novopf
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/lightsquid/tpl/novopf/images
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/lightsquid/tpl/novosea
@@ -42,14 +41,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}/etc/inc/priv/lightsquid.priv.inc \
 		${STAGEDIR}/etc/inc/priv
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/sqstat/sqstat.class.php \
-		${STAGEDIR}${PREFIX}/www/sqstat
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/sqstat/sqstat.php \
-		${STAGEDIR}${PREFIX}/www/sqstat
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/sqstat/sqstat.css \
-		${STAGEDIR}${PREFIX}/www/sqstat
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/sqstat/zhabascript.js \
-		${STAGEDIR}${PREFIX}/www/sqstat
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/share/lightsquid/tpl/novopf/bigfiles.html \
 		${STAGEDIR}${PREFIX}/share/lightsquid/tpl/novopf
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/share/lightsquid/tpl/novopf/day_detail.html \

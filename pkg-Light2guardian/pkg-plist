@@ -1,10 +1,6 @@
 pkg/lightsquid.xml
 pkg/lightsquid.inc
 /etc/inc/priv/lightsquid.priv.inc
-www/sqstat/sqstat.class.php
-www/sqstat/sqstat.php
-www/sqstat/sqstat.css
-www/sqstat/zhabascript.js
 share/lightsquid/tpl/novopf/bigfiles.html
 share/lightsquid/tpl/novopf/day_detail.html
 share/lightsquid/tpl/novopf/graph.html
@@ -45,4 +41,3 @@ share/lightsquid/tpl/novosea/user_time.html
 share/lightsquid/tpl/novosea/whousesite.html
 %%DATADIR%%/info.xml
 @dir /etc/inc/priv/
-@dir /etc/inc
