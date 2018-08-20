@@ -568,29 +568,19 @@ function lightsquid_validate_input($post, &$input_errors) {
 		}
 	}
 
-//	/* Check whether Squid is configured at all */
-//	if (is_array($config['installedpackages']['e2guardian']['config'][0])) {
-//		$squid_settings = $config['installedpackages']['e2guardian']['config'][0];
-//	} else {
-//		$input_errors[] = "Please, configure E2guardian package settings first.";
-//		$squid_settings = array();
-//	}
-	
 	/* Check whether E2guardian is enable */
 	if ($config['installedpackages']['e2guardian']['config'][0]['enable'] == "on") {
-		return;
+		$e2guardian_setting = $config['installedpackages']['e2guardian']['config'][0];
 	} else {
 		$input_errors[] = "Please, configure E2guardian package settings first.";
+		$e2guardian_setting = array();
 	}
 
 	/* Check E2guardian Log File Format */
 	if ($config['installedpackages']['e2guardianlog']['config'][0]['logfileformat'] != "3")) {
 		$input_errors[] = "Please, change de Log File Format to 'Squid Log File Format' in E2guardian package 'Report and Log' settings first.";
 	}
-	else {
-		return;
-	}
-	
+
 	/* 'Skip URL(s)' validation */
 	if ($post['lightsquid_skipurl'] != "") {
 		$hosts = explode("|", $post['lightsquid_skipurl']);
@@ -602,5 +592,4 @@ function lightsquid_validate_input($post, &$input_errors) {
 		}
 	}
 }
-
 ?>
