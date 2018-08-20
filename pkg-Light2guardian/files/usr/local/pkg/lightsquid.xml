@@ -150,8 +150,6 @@
 				]]>
 			</description>
 		</field>
-
-
 		<field>
 			<name>Report Template Settings</name>
 			<type>listtopic</type>
