@@ -568,14 +568,21 @@ function lightsquid_validate_input($post, &$input_errors) {
 		}
 	}
 
+//	/* Check whether Squid is configured at all */
+//	if (is_array($config['installedpackages']['e2guardian']['config'][0])) {
+//		$squid_settings = $config['installedpackages']['e2guardian']['config'][0];
+//	} else {
+//		$input_errors[] = "Please, configure E2guardian package settings first.";
+//		$squid_settings = array();
+//	}
+	
 	/* Check whether Squid is configured at all */
-	if (is_array($config['installedpackages']['e2guardian']['config'][0])) {
-		$squid_settings = $config['installedpackages']['e2guardian']['config'][0];
+	if ($config['installedpackages']['e2guardian']['config'][0]['enable'] == "on") {
+		return;
 	} else {
 		$input_errors[] = "Please, configure E2guardian package settings first.";
-		$squid_settings = array();
 	}
-	
+
 	/* Check E2guardian Log File Format */
 	if (is_array($config['installedpackages']['e2guardianlog']['config']['logfileformat'] != "3")){
 		$input_errors[] = "Please, change de Log File Format to 'Squid Log File Format' in E2guardian package 'Report and Log' settings first.";
