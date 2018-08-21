@@ -61,8 +61,8 @@ define('LS_DEF_SKIPURL', 'zzz\.zzz');
 define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
-define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . 'group.cfg.sample');
-define('LS_DEF_NAME', LS_GROUPSNAMEPATH . 'realname.cfg.sample');
+define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . 'group.cfg');
+define('LS_DEF_NAME', LS_GROUPSNAMEPATH . 'realname.cfg');
 
 /*
  * Package install/uninstall
@@ -351,8 +351,6 @@ function lightsquid_resync() {
 	$lsconf_var['ip2name'] = "\"" . LS_DEF_IP2NAME . "\"";
 	$lsconf_var['skipurl'] = "'" . LS_DEF_SKIPURL . "'";
 	$lsconf_var['squidlogtype'] = LS_DEF_SQUIDLOGTYPE;
-	$lsconf_var['group'] = LS_DEF_GROUP;
-	$lsconf_var['name'] = LS_DEF_NAME;
 
 	// Update variables from package GUI config
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
@@ -365,15 +363,6 @@ function lightsquid_resync() {
 		if (isset($lightsquid_config['lightsquid_skipurl']) and !empty($lightsquid_config['lightsquid_skipurl'])) {
 			$lsconf_var['skipurl'] = "'" . str_replace(".", "\\.", $lightsquid_config['lightsquid_skipurl']) . "'";
 		}
-
-
-		if (isset($lightsquid_config['light2guardian_group']) and !empty($lightsquid_config['light2guardian_group'])) {
-			$lsconf_var['group'] = str_replace($lightsquid_config['light2guardian_group']);
-		}
-		if (isset($lightsquid_config['light2guardian_name']) and !empty($lightsquid_config['light2guardian_name'])) {
-			$lsconf_var['name'] = str_replace($lightsquid_config['light2guardian_name']);
-		}
-		
 
 		if (isset($lightsquid_config['lightsquid_ip2name']) and !empty($lightsquid_config['lightsquid_ip2name'] )) {
 			$lsconf_var['ip2name'] = "\"" . $lightsquid_config['lightsquid_ip2name'] . "\"";
@@ -438,6 +427,16 @@ function lightsquid_resync() {
  * Reports
  */
 
+function light2guardian_groupandname
+	global $config
+	
+	if (isset($config['light2guardian_group']) and !empty($config['light2guardian_group'])) {
+		base64_encode(file_get_contents(LS_DEF_GROUP . 'group.cfg.sample');
+	}
+	//if (isset($config['light2guardian_name']) and !empty($config['light2guardian_name'])) {
+		//$lsconf_var['name'] = str_replace($config['light2guardian_name']);
+	//}
+ 
 /* Configure scheduled reports updates via cron */
 function lightsquid_setup_cron($active=false) {
 	global $config;
