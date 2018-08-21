@@ -433,7 +433,7 @@ function light2guardian_groupandname() {
 		$config['installedpackages']['lightsquid']['config'][0] = array("light2guardian_group" => "", "light2guardian_name" => "");
 	}
 	
-	if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "") && file_exists($pasta . '/etc/lightsquid/group.cfg.sample')) {
+	if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists($pasta . '/etc/lightsquid/group.cfg.sample')) {
 		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = file_get_contents($pasta . '/etc/lightsquid/group.cfg.sample');
 	}
 	
