@@ -202,6 +202,22 @@
 				<option><name>Red</name><value>red</value></option>
 			</options>
 		</field>
+		
+		<field>
+			<name>Groups and Names</name>
+			<type>listtopic</type>
+		</field>
+		<field>
+			<fielddescr>Groups</fielddescr>
+			<fieldname>light2guardian_group</fieldname>
+			<type>textarea</type>
+		</field>
+		<field>
+			<fielddescr>Names</fielddescr>
+			<fieldname>light2guardian_name</fieldname>
+			<type>textarea</type>
+		</field>
+
 		<field>
 			<name>Reporting Settings and Scheduler</name>
 			<type>listtopic</type>
