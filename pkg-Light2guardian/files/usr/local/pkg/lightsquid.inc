@@ -432,7 +432,7 @@ function light2guardian_groupandname() {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	}
 	
-	if ($lightsquid_config['light2guardian_group'] = "") {
+	if (empty($lightsquid_config['light2guardian_group'])) {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "group.cfg.sample"));
 	}
 	
