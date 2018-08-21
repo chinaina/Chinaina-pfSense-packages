@@ -52,6 +52,7 @@ global $config;
 define('LS_SQUIDLOG', 'access.log');
 define('LS_IP2NAMEPATH', LIGHTSQUID_BASE . '/libexec/lightsquid');
 define('CRONTAB_LS_TEMPLATE', '/usr/local/bin/perl ' . LIGHTSQUID_BASE . '/www/lightsquid/lightparser.pl');
+define('LS_GROUPSNAMEPATH', LIGHTSQUID_BASE . '/etc/lightsquid');
 
 // default values
 define('LS_DEF_IP2NAME', 'dns');
@@ -60,6 +61,8 @@ define('LS_DEF_SKIPURL', 'zzz\.zzz');
 define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
+define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . 'group.cfg.sample');
+define('LS_DEF_NAME', LS_GROUPSNAMEPATH . 'realname.cfg.sample');
 
 /*
  * Package install/uninstall
@@ -348,6 +351,8 @@ function lightsquid_resync() {
 	$lsconf_var['ip2name'] = "\"" . LS_DEF_IP2NAME . "\"";
 	$lsconf_var['skipurl'] = "'" . LS_DEF_SKIPURL . "'";
 	$lsconf_var['squidlogtype'] = LS_DEF_SQUIDLOGTYPE;
+	$lsconf_var['group'] = "'" . LS_DEF_GROUP . "'";
+	$lsconf_var['name'] = "'" . LS_DEF_NAME . "'";
 
 	// Update variables from package GUI config
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
@@ -360,6 +365,15 @@ function lightsquid_resync() {
 		if (isset($lightsquid_config['lightsquid_skipurl']) and !empty($lightsquid_config['lightsquid_skipurl'])) {
 			$lsconf_var['skipurl'] = "'" . str_replace(".", "\\.", $lightsquid_config['lightsquid_skipurl']) . "'";
 		}
+
+
+		if (isset($lightsquid_config['light2guardian_group']) and !empty($lightsquid_config['light2guardian_group'])) {
+			$lsconf_var['group'] = "'" . str_replace(".", "\\.", $lightsquid_config['light2guardian_group']) . "'";
+		}
+		if (isset($lightsquid_config['light2guardian_name']) and !empty($lightsquid_config['light2guardian_name'])) {
+			$lsconf_var['name'] = "'" . str_replace(".", "\\.", $lightsquid_config['light2guardian_name']) . "'";
+		}
+		
 
 		if (isset($lightsquid_config['lightsquid_ip2name']) and !empty($lightsquid_config['lightsquid_ip2name'] )) {
 			$lsconf_var['ip2name'] = "\"" . $lightsquid_config['lightsquid_ip2name'] . "\"";
