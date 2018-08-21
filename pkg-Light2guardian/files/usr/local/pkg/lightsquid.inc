@@ -429,10 +429,10 @@ function light2guardian_groupandname() {
 	global $config;
 	
 	if (isset($config['light2guardian_group']) and empty($config['light2guardian_group'])) {
-		$config['light2guardian_group'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . '/group.cfg.sample'));
+		$config['light2guardian_group'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "/group.cfg.sample"));
 	}
 	if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
-		$config['light2guardian_name'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . '/realname.cfg.sample'));
+		$config['light2guardian_name'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "/realname.cfg.sample"));
 	}
 }
 
