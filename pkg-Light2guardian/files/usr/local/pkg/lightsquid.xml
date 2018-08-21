@@ -211,11 +211,15 @@
 			<fielddescr>Groups</fielddescr>
 			<fieldname>light2guardian_group</fieldname>
 			<type>textarea</type>
+			<cols>60</cols>
+			<rows>5</rows>
 		</field>
 		<field>
 			<fielddescr>Names</fielddescr>
 			<fieldname>light2guardian_name</fieldname>
 			<type>textarea</type>
+			<cols>60</cols>
+			<rows>5</rows>
 		</field>
 
 		<field>
