@@ -436,7 +436,7 @@ function light2guardian_groupandname() {
 	//if (isset($config['light2guardian_name']) and !empty($config['light2guardian_name'])) {
 	//$lsconf_var['name'] = str_replace($config['light2guardian_name']);
 	//}
- ;
+}
 /* Configure scheduled reports updates via cron */
 function lightsquid_setup_cron($active=false) {
 	global $config;
