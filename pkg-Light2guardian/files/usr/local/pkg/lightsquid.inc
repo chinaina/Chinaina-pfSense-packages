@@ -61,8 +61,6 @@ define('LS_DEF_SKIPURL', 'zzz\.zzz');
 define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
-define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . 'group.cfg');
-define('LS_DEF_NAME', LS_GROUPSNAMEPATH . 'realname.cfg');
 
 /*
  * Package install/uninstall
@@ -431,10 +429,10 @@ function light2guardian_groupandname() {
 	global $config;
 	
 	if (isset($config['light2guardian_group']) and empty($config['light2guardian_group'])) {
-		$config['light2guardian_group'] = base64_encode(file_get_contents(LS_DEF_GROUP . '/group.cfg.sample'));
+		$config['light2guardian_group'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . '/group.cfg.sample'));
 	}
 	if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
-		$config['light2guardian_name'] = base64_encode(file_get_contents(LS_DEF_NAME . '/realname.cfg.sample'));
+		$config['light2guardian_name'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . '/realname.cfg.sample'));
 	}
 }
 
