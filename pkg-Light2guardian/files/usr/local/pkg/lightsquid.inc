@@ -29,7 +29,6 @@ require_once('pkg-utils.inc');
 require_once('service-utils.inc');
 require_once('util.inc');
 
-
 if (file_exists('/usr/local/pkg/e2guardian.inc')) {
 	require_once('/usr/local/pkg/e2guardian.inc');
 } else {
@@ -521,13 +520,13 @@ function lightsquid_create_reportdir() {
 	}
 }
 
-
 /*
  * Input validation
  * Check required Squid configuration and provide instructions to users,
  * instead of trying to mess with Squid's settings directly.
  */
-function lightsquid_validate_input($post, &$input_errors) {
+
+ function lightsquid_validate_input($post, &$input_errors) {
 	global $config;
 
 	if ($post['navto_lightsquid'] == 'Open Lightsquid') {
