@@ -59,7 +59,7 @@
 				<div class="infoblock"><ol type="1">
 				<li>
 					<strong><span class="text-info">Configure E2guardian logging</span></strong><br/>
-					Change 'Log File Format' to 'Squid Log File Format' on <a href="/pkg_edit.php?xml=e2guardian_log.xml">E2guardian > Report and Log</a> page.<br/>
+					Change 'Log File Format' to 'Squid Log File Format' on <a href="/pkg_edit.php?xml=e2guardian_log.xml">E2guardian > Report and Log</a> page.<br/><br/>
 				</li>
 				<li>
 					<strong><span class="text-info">Configure Light2guardian</span></strong><br/>
