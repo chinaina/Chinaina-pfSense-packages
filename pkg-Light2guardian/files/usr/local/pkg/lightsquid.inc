@@ -367,10 +367,10 @@ function lightsquid_resync() {
 		}
 
 
-		if (isset($lightsquid_config['light2guardian_group']) and empty($lightsquid_config['light2guardian_group'])) {
+		if (isset($lightsquid_config['light2guardian_group']) and !empty($lightsquid_config['light2guardian_group'])) {
 			$lsconf_var['group'] = str_replace($lightsquid_config['light2guardian_group']);
 		}
-		if (isset($lightsquid_config['light2guardian_name']) and empty($lightsquid_config['light2guardian_name'])) {
+		if (isset($lightsquid_config['light2guardian_name']) and !empty($lightsquid_config['light2guardian_name'])) {
 			$lsconf_var['name'] = str_replace($lightsquid_config['light2guardian_name']);
 		}
 		
