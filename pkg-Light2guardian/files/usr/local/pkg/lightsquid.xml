@@ -58,22 +58,15 @@
 				<strong><span class="text-danger">IMPORTANT: </span>Click Info and follow the instructions below if this is initial install!</strong>
 				<div class="infoblock"><ol type="1">
 				<li>
-					<strong><span class="text-info">Enable and configure Squid logging</span></strong><br/>
-					Check 'Enable Access Logging' and configure 'Log Store Directory' on <a href="/pkg_edit.php?xml=squid.xml">Squid Proxy Server > General</a> page.<br/>
-					Hint: It is strongly suggested to leave the 'Log Store Directory' at default <code>/var/squid/logs</code> value.<br/><br/>
+					<strong><span class="text-info">Configure E2guardian logging</span></strong><br/>
+					Change 'Log File Format' to 'Squid Log File Format' on <a href="/pkg_edit.php?xml=e2guardian_log.xml">E2guardian > Report and Log</a> page.<br/>
 				</li>
 				<li>
-					<strong><span class="text-info">(ONLY if Squid is NOT set up as transparent proxy)</span></strong><br/>
-					Configure 'Proxy Interface(s)' on <a href="/pkg_edit.php?xml=squid.xml">Squid Proxy Server > General</a> page to
-					include <strong>'loopback'</strong> interface (in addition to any other interfaces you want Squid to bind on).
-					This is required for sqstat to work.<br/><br/>
-				</li>
-				<li>
-					<strong><span class="text-info">Configure Lightsquid</span></strong><br/>
+					<strong><span class="text-info">Configure Light2guardian</span></strong><br/>
 					Complete the 'Report Template Settings' and 'Reporting Settings and Scheduler' sections below and <strong>Save when finished.</strong><br/><br/>
 				</li>
 				<li>
-					<strong><span class="text-info">Create initial Lightsquid reports</span></strong><br/>
+					<strong><span class="text-info">Create initial Light2guardian reports</span></strong><br/>
 					Use the 'Refresh' buttons in the 'Manual Refresh' section below to create initial LightSquid reports.<br/>
 					<span class="text-danger">Important: </span>If you skip this step, you will get a diagnostic error page when you click 'Open Lightsquid'.
 					<dl class="dl-horizontal responsive">
@@ -95,7 +88,7 @@
 			<fieldname>lighttpd_ls_port</fieldname>
 			<description>
 				<![CDATA[
-				Port the lighttpd web server for Lightsquid will listen on.
+				Port the lighttpd web server for Light2guardian will listen on.
 				<span class="text-info">(Default: 14902)</span>
 				]]>
 			</description>
@@ -146,7 +139,7 @@
 			<fielddescr>Links</fielddescr>
 			<description>
 				<![CDATA[
-				<button type="submit" class="btn btn-info" name="navto_lightsquid" id="navto_lightsquid" value="Open Lightsquid"><i class="fa fa-sign-in icon-embed-btn"></i>Open Lightsquid</button>
+				<button type="submit" class="btn btn-info" name="navto_lightsquid" id="navto_lightsquid" value="Open Lightsquid"><i class="fa fa-sign-in icon-embed-btn"></i>Open Light2guardian</button>
 				]]>
 			</description>
 		</field>
