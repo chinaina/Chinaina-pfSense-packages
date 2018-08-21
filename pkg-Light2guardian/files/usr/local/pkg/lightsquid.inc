@@ -427,14 +427,14 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
-	$pasta = LS_GROUPSNAMEPATH;
+	$pasta = LIGHTSQUID_BASE;
 	
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	}
 	
 	if (empty($lightsquid_config['light2guardian_group'])) {
-		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = file_get_contents($pasta . 'group.cfg.sample');
+		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = file_get_contents($pasta . '/etc/lightsquid/group.cfg.sample');
 	}
 	
 	//if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
