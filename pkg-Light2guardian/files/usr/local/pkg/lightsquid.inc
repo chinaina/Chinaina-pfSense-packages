@@ -351,8 +351,8 @@ function lightsquid_resync() {
 	$lsconf_var['ip2name'] = "\"" . LS_DEF_IP2NAME . "\"";
 	$lsconf_var['skipurl'] = "'" . LS_DEF_SKIPURL . "'";
 	$lsconf_var['squidlogtype'] = LS_DEF_SQUIDLOGTYPE;
-	$lsconf_var['group'] = "'" . LS_DEF_GROUP . "'";
-	$lsconf_var['name'] = "'" . LS_DEF_NAME . "'";
+	$lsconf_var['group'] = LS_DEF_GROUP;
+	$lsconf_var['name'] = LS_DEF_NAME;
 
 	// Update variables from package GUI config
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
@@ -367,11 +367,11 @@ function lightsquid_resync() {
 		}
 
 
-		if (isset($lightsquid_config['light2guardian_group']) and !empty($lightsquid_config['light2guardian_group'])) {
-			$lsconf_var['group'] = "'" . str_replace(".", "\\.", $lightsquid_config['light2guardian_group']) . "'";
+		if (isset($lightsquid_config['light2guardian_group']) and empty($lightsquid_config['light2guardian_group'])) {
+			$lsconf_var['group'] = str_replace($lightsquid_config['light2guardian_group']);
 		}
-		if (isset($lightsquid_config['light2guardian_name']) and !empty($lightsquid_config['light2guardian_name'])) {
-			$lsconf_var['name'] = "'" . str_replace(".", "\\.", $lightsquid_config['light2guardian_name']) . "'";
+		if (isset($lightsquid_config['light2guardian_name']) and empty($lightsquid_config['light2guardian_name'])) {
+			$lsconf_var['name'] = str_replace($lightsquid_config['light2guardian_name']);
 		}
 		
 
