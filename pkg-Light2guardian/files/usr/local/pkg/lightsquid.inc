@@ -427,8 +427,8 @@ function lightsquid_resync() {
  * Reports
  */
 
-function light2guardian_groupandname
-	global $config
+function light2guardian_groupandname() {
+	global $config;
 	
 	if (isset($config['light2guardian_group']) and !empty($config['light2guardian_group'])) {
 		base64_encode(file_get_contents(LS_DEF_GROUP . 'group.cfg.sample');
@@ -436,7 +436,7 @@ function light2guardian_groupandname
 	//if (isset($config['light2guardian_name']) and !empty($config['light2guardian_name'])) {
 		//$lsconf_var['name'] = str_replace($config['light2guardian_name']);
 	//}
- 
+ ;
 /* Configure scheduled reports updates via cron */
 function lightsquid_setup_cron($active=false) {
 	global $config;
