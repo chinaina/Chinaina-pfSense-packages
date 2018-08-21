@@ -428,7 +428,7 @@ function lightsquid_resync() {
 function light2guardian_groupandname() {
 	global $config;
 	
-	if (empty($config['light2guardian_group']) {
+	if (empty($config['light2guardian_group'])) {
 		$config['light2guardian_group'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "/group.cfg.sample"));
 	}
 	//if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
