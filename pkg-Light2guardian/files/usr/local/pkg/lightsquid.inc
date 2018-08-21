@@ -422,7 +422,7 @@ function lightsquid_resync() {
 }
 
 /*
- * Reports
+ * Groups and Names
  */
 
 function light2guardian_groupandname() {
@@ -435,6 +435,10 @@ function light2guardian_groupandname() {
 		//$config['light2guardian_name'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "/realname.cfg.sample"));
 	//}
 }
+
+/*
+ * Reports
+ */
 
 /* Configure scheduled reports updates via cron */
 function lightsquid_setup_cron($active=false) {
