@@ -425,10 +425,6 @@ function lightsquid_resync() {
  * Groups and Names
  */
 
- function e2_text_area_decode($text) {
-	return preg_replace('/\r\n/', "\n", base64_decode($text));
-}
-
 function light2guardian_groupandname() {
 	global $config;
 	$pasta = LIGHTSQUID_BASE;
