@@ -456,7 +456,6 @@ function light2guardian_groupandname() {
 		//$config['light2guardian_name'] = base64_encode(file_get_contents(LS_GROUPSNAMEPATH . "/realname.cfg.sample"));
 	//}
 }
-
 /*
  * Reports
  */
