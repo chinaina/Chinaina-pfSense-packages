@@ -439,7 +439,7 @@ function light2guardian_groupandname() {
 	}
 	
 	if (empty($lightsquid_config['light2guardian_group']) && file_exists($pasta . '/etc/lightsquid/group.cfg.sample')) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($pasta . '/etc/lightsquid/group.cfg.sample');
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($pasta . '/etc/lightsquid/group.cfg.sample'));
 	}
 	file_put_contents($pasta . "/etc/lightsquid/group.cfg", e2_text_area_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']), LOCK_EX);
 
