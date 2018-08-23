@@ -204,7 +204,7 @@
 			<fielddescr>Groups</fielddescr>
 			<fieldname>light2guardian_group</fieldname>
 			<type>textarea</type>
-			<default_value>0</default_value>
+			<name><value>Sem Valor</value></name>
 			<cols>60</cols>
 			<rows>5</rows>
 			<encoding>base64</encoding>
