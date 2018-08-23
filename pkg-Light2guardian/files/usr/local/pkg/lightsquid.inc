@@ -445,7 +445,7 @@ function light2guardian_groupandname() {
 	
 	if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
 		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
-	//}
+	}
 	
 //	write_config();
 	//if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
