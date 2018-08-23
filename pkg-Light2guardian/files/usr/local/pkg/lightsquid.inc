@@ -428,13 +428,13 @@ function lightsquid_resync() {
 function light2guardian_groupandname() {
 	global $config;
 	
-	if (is_array($config['installedpackages']['lightsquid']['config'])) {
+	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
 		return;
 	}
 	
-	if (empty($lightsquid_config['light2guardian_group']) && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
+	if (empty($lightsquid_config['light2guardian_group']) and file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
 	}
 	//file_put_contents($pasta . "/etc/lightsquid/group.cfg", base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']), LOCK_EX);
