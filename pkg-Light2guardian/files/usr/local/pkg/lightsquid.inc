@@ -77,7 +77,8 @@ function lightsquid_install() {
 	foreach (array('novopf', 'novosea') as $tpl) {
 		@symlink('/usr/local/share/lightsquid/tpl/' . $tpl, LS_TEMPLATEPATH . '/' . $tpl);
 	}
-
+	light2guardian_groupandname();
+	
 	update_status("\nRemove any existing and create new hardlink for lightsquid lighttpd executable...");
 	unlink_if_exists('/usr/local/sbin/lighttpd_ls');
 	link('/usr/local/sbin/lighttpd', '/usr/local/sbin/lighttpd_ls');
