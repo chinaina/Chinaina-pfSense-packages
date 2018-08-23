@@ -77,8 +77,7 @@ function lightsquid_install() {
 	foreach (array('novopf', 'novosea') as $tpl) {
 		@symlink('/usr/local/share/lightsquid/tpl/' . $tpl, LS_TEMPLATEPATH . '/' . $tpl);
 	}
-	light2guardian_groupandname();
-	
+		
 	update_status("\nRemove any existing and create new hardlink for lightsquid lighttpd executable...");
 	unlink_if_exists('/usr/local/sbin/lighttpd_ls');
 	link('/usr/local/sbin/lighttpd', '/usr/local/sbin/lighttpd_ls');
@@ -379,6 +378,11 @@ function lightsquid_resync() {
 		if (isset($lightsquid_config['lightsquid_barcolor']) and !empty($lightsquid_config['lightsquid_barcolor'])) {
 			$lsconf_var['barcolor'] = "\"" . $lightsquid_config['lightsquid_barcolor'] . "\"";
 		}
+		//if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
+			//	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
+	if (empty($lightsquid_config['light2guardian_group']) && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
+	}
 	}
 
 	// Create or update lightsquid.cfg
@@ -444,9 +448,7 @@ function light2guardian_groupandname() {
 		//$config['installedpackages']['lightsquid']['config'][0] = array("light2guardian_group" => "", "light2guardian_name" => "");
 	//}
 	
-	if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
-		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
-	}
+
 	
 //	write_config();
 	//if (isset($config['light2guardian_name']) and empty($config['light2guardian_name'])) {
