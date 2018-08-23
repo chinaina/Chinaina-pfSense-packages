@@ -424,24 +424,20 @@ function lightsquid_resync() {
 /*
  * Groups and Names
  */
-function e2g_text_area_decode($text) {
-	return preg_replace('/\r\n/', "\n", base64_decode($text));
-}
 
 function light2guardian_groupandname() {
 	global $config;
-	$pasta = LIGHTSQUID_BASE;
 	
-	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
+	if (is_array($config['installedpackages']['lightsquid']['config'])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
 		return;
 	}
 	
-	if (empty($lightsquid_config['light2guardian_group']) && file_exists('/usr/local/etc/lightsquid/group.cfg.sample')) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	if (empty($lightsquid_config['light2guardian_group']) && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
 	}
-	file_put_contents($pasta . "/etc/lightsquid/group.cfg", e2_text_area_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']), LOCK_EX);
+	//file_put_contents($pasta . "/etc/lightsquid/group.cfg", base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']), LOCK_EX);
 
 	//if (is_array($config['installedpackages']['lightsquid']['config'])) {
 		//$config['installedpackages']['lightsquid']['config'][0] = array("light2guardian_group" => "", "light2guardian_name" => "");
