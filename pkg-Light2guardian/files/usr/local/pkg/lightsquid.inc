@@ -377,7 +377,7 @@ function lightsquid_resync() {
 
 		if (isset($lightsquid_config['lightsquid_barcolor']) and !empty($lightsquid_config['lightsquid_barcolor'])) {
 			$lsconf_var['barcolor'] = "\"" . $lightsquid_config['lightsquid_barcolor'] . "\"";
-		}0
+		}
 		//if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
 			//	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
 		
