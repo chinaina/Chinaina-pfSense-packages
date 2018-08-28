@@ -332,5 +332,6 @@
 	</custom_php_resync_config_command>
 	<custom_php_validation_command>
 		lightsquid_validate_input($_POST, $input_errors);
+		light2guardian_groupandname();
 	</custom_php_validation_command>
 </packagegui>
