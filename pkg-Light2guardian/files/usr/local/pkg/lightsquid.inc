@@ -94,6 +94,9 @@ function lightsquid_install() {
 	restart_service('lightsquid_web');
 	update_status(" done.\n");
 
+	update_status("Teste...");
+	light2guardian_groupandname();
+	update_status(" done.\n");
 }
 
 function lightsquid_deinstall() {
@@ -444,7 +447,7 @@ function light2guardian_groupandname() {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
 	}
 	
-	lightsquid_write_webconfig();
+	write_config();
 }
 
 /*
