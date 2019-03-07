@@ -450,7 +450,7 @@ function light2guardian_groupandname() {
 }
 
 /*
- * Reports
+ * Relatórios
  */
 
 /* Configure scheduled reports updates via cron */
