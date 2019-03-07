@@ -436,7 +436,7 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
-	$lightsquid_base = LIGHTSQUID_BASE . "/etc/lightsquid";
+	$lightsquid_base = LIGHTSQUID_BASE . "/etc/lightsquid/";
 	
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
