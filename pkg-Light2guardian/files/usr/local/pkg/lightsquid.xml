@@ -206,7 +206,7 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
-			<encoding>base64</encoding>
+			<default_value>pfsense</default_value>
 		</field>
 		<field>
 			<fielddescr>Names</fielddescr>
@@ -214,7 +214,6 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
-			<encoding>base64</encoding>
 		</field>
 
 		<field>
