@@ -441,13 +441,13 @@ function light2guardian_groupandname() {
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
-		return;
+		
 	}
 	
 	if (empty($lightsquid_config['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file($lightsquid_base . 'group.cfg.sample'));
+		$lightsquid_config['light2guardian_group'] = file($lightsquid_base . 'group.cfg.sample');
 	} else {
-		$lightsquid_config['light2guardian_group'] = base64_decode(file_put_contents($lightsquid_base . 'group.cfg'));
+		return;
 	}
 }
 
