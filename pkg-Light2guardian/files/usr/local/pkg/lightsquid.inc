@@ -445,7 +445,7 @@ function light2guardian_groupandname() {
 	}
 	
 	if (empty($lightsquid_config['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($lightsquid_base . 'group.cfg'));
+		$lightsquid_config['light2guardian_group'] = base64_encode(file($lightsquid_base . 'group.cfg.sample'));
 	} else {
 		$lightsquid_config['light2guardian_group'] = base64_decode(file_put_contents($lightsquid_base . 'group.cfg'));
 	}
