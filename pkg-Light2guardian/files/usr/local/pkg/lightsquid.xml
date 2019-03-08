@@ -206,7 +206,11 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
-			<default_value>'/usr/local/etc/lightsquid/group.cfg.sample'</default_value>
+			<default_value>Tony	01	Financeiro
+Parker	01	Financeiro
+Robert	02	Diretoria
+Ash		03	Operacional</default_value>
+			<encoding>base64</encoding>
 		</field>
 		<field>
 			<fielddescr>Names</fielddescr>
