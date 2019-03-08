@@ -440,9 +440,9 @@ function light2guardian_groupandname() {
 	}
 	
 	if (empty($lightsquid_config['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'][0] = "Teste";
+		$lightsquid_config['light2guardian_group'] = "Teste";
 	} else {
-		$lightsquid_config['light2guardian_group'][0] = "Teste";
+		$lightsquid_config['light2guardian_group'] = "Teste";
 	}
 }
 
