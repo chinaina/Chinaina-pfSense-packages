@@ -206,7 +206,7 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
-			<default_value>pfsense</default_value>
+			<default_value>'/usr/local/etc/lightsquid/group.cfg.sample'</default_value>
 		</field>
 		<field>
 			<fielddescr>Names</fielddescr>
