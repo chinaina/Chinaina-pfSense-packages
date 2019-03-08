@@ -381,12 +381,6 @@ function lightsquid_resync() {
 		if (isset($lightsquid_config['lightsquid_barcolor']) and !empty($lightsquid_config['lightsquid_barcolor'])) {
 			$lsconf_var['barcolor'] = "\"" . $lightsquid_config['lightsquid_barcolor'] . "\"";
 		}
-		//if ($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] == "" && file_exists("/usr/local/etc/lightsquid/group.cfg.sample")) {
-			//	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
-		
-		if (empty($lightsquid_config['light2guardian_group'])){
-			$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
-		}
 	}
 
 	// Create or update lightsquid.cfg
@@ -427,6 +421,7 @@ function lightsquid_resync() {
 	// Set up scheduled reports updates
 	lightsquid_setup_cron(true);
 	lightsquid_write_webconfig();
+	light2guardian_groupandname();
 	restart_service('lightsquid_web');
 }
 
