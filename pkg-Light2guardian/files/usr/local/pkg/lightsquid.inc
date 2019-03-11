@@ -441,9 +441,9 @@ function light2guardian_groupandname() {
 	}
 	
 	if (empty("$lightsquid_config['light2guardian_group']")) {
-		$lightsquid_config['light2guardian_group'] = file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+		$lightsquid_config['light2guardian_group'] = file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample');
 	} else {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', $lightsquid_config['light2guardian_group']));
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', $lightsquid_config['light2guardian_group']);
 	}
 }
 
