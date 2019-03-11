@@ -206,10 +206,6 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
-			<default_value>Tony	01	Financeiro
-Parker	01	Financeiro
-Robert	02	Diretoria
-Ash		03	Operacional</default_value>
 			<encoding>base64</encoding>
 		</field>
 		<field>
@@ -218,6 +214,7 @@ Ash		03	Operacional</default_value>
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
+			<encoding>base64</encoding>
 		</field>
 
 		<field>
