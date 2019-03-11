@@ -443,7 +443,7 @@ function light2guardian_groupandname() {
 	if (is_null($lightsquid_config['light2guardian_group'])) {
 		$lightsquid_config['light2guardian_group'] = base64_decode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	} else {
-		base64_decode(file_put_contents('/usr/local/etc/lightsquid/group.cfg', $lightsquid_config['light2guardian_group']));
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	}
 }
 
