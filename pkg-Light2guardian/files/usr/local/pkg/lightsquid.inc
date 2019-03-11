@@ -62,6 +62,8 @@ define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
 
+define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . '/' . 'group.cfg.sample');
+
 /*
  * Package install/uninstall
  */
