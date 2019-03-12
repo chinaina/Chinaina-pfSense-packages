@@ -432,6 +432,7 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
+	$light2guardian = 0;
 	$lsconf_group_file = LS_CONFIGPATH . "/" . LS_GROUPFILE;
 		
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
@@ -443,7 +444,8 @@ function light2guardian_groupandname() {
 	if (!is_null($lightsquid_config['light2guardian_group'])) {
 		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	} else {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($lsconf_group_file));
+		$light2guardian = base64_encode(file_get_contents($lsconf_group_file));
+		$lightsquid_config['light2guardian_group'] = $light2guardian;
 		}
 	}
 
