@@ -620,4 +620,7 @@ function lightsquid_create_reportdir() {
 			}
 		}
 	}
+	if ($post['light2guardian_group'] == "") {
+		$input_errors[] = "O campo groups não pode ficar vazio";
+		}
 ?>
