@@ -325,7 +325,7 @@
 		// Do not resync configuration on manual reports refresh
 		if ($_POST['refreshnow'] == "Refresh Now" || $_POST['refreshfull'] == "Refresh Full") {
 		}
-		if ($_POST['light2guardian_group'] == "") {
+		if ($_POST['light2guardian_group'] != "") {
 			return;
 		}
 		lightsquid_resync();
