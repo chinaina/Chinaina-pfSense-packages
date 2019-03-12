@@ -431,8 +431,7 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
-	$lsconf_group_file = LS_CONFIGPATH . "/" . LS_GROUPFILE;
-		
+			
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
@@ -442,7 +441,7 @@ function light2guardian_groupandname() {
 	if (!is_null($lightsquid_config['light2guardian_group'])) {
 		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	} else {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($lsconf_group_file));
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 		}
 	}
 
@@ -565,17 +564,18 @@ function lightsquid_create_reportdir() {
 		if (empty($lightsquid_config['lighttpd_ls_port'])) {
 			$lightsquid_config['lighttpd_ls_port'] = "14902";
 		}
-		if (empty($lightsquid_config['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-		}
 		if (!isset($lightsquid_config['lighttpd_ls_ssl']) || ($lightsquid_config['lighttpd_ls_ssl'] == "on")) {
 			$navto_proto = "https";
 		} else {
 			$navto_proto = "http";
 		}
-		header("Location: {$navto_proto}://{$server_host}:{$lightsquid_config['lighttpd_ls_port']}/");
+		header("Location: {$navto_proto}://{$server_host}:{$l ightsquid_config['lighttpd_ls_port']}/");
 		exit;
 	}
+	if (empty($post['light2guardian_group'])) {
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	}
+			
 //	if ($post['navto_sqstat'] == 'Open sqstat') {
 //		header("Location: /sqstat/sqstat.php");
 //		exit;
