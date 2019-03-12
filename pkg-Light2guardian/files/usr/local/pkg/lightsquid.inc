@@ -430,7 +430,7 @@ function lightsquid_resync() {
  * Groups and Names
  */
 
-function light2guardian_groupandname($post) {
+function light2guardian_groupandname() {
 	global $config;
 	$light2guardian = "Teste";
 	$lsconf_group_file = LS_CONFIGPATH . "/" . LS_GROUPFILE;
