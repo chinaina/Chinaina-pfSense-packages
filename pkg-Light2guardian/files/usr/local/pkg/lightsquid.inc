@@ -422,7 +422,6 @@ function lightsquid_resync() {
 	// Set up scheduled reports updates
 	lightsquid_setup_cron(true);
 	lightsquid_write_webconfig();
-	light2guardian_groupandname();
 	restart_service('lightsquid_web');
 }
 
