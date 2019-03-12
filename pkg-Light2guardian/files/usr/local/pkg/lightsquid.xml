@@ -203,9 +203,10 @@
 		<field>
 			<fielddescr>Groups</fielddescr>
 			<fieldname>light2guardian_group</fieldname>
-			<type>textarea</type>
+			<type>input</type>
 			<cols>60</cols>
 			<rows>5</rows>
+			<default_value>14902</default_value>
 			<encoding>base64</encoding>
 		</field>
 		<field>
