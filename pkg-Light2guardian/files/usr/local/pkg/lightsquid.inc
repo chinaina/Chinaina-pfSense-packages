@@ -620,6 +620,4 @@ function lightsquid_create_reportdir() {
 			}
 		}
 	}
-}
-
 ?>
