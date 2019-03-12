@@ -324,7 +324,6 @@
 	<![CDATA[
 		// Do not resync configuration on manual reports refresh
 		if ($_POST['refreshnow'] == "Refresh Now" || $_POST['refreshfull'] == "Refresh Full") {
-			return;
 		}
 		if ($_POST['light2guardian_group'] == "") {
 			return;
