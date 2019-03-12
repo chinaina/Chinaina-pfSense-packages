@@ -52,7 +52,7 @@ global $config;
 define('LS_SQUIDLOG', 'access.log');
 define('LS_IP2NAMEPATH', LIGHTSQUID_BASE . '/libexec/lightsquid');
 define('CRONTAB_LS_TEMPLATE', '/usr/local/bin/perl ' . LIGHTSQUID_BASE . '/www/lightsquid/lightparser.pl');
-define('LS_GROUPSNAMEPATH', LIGHTSQUID_BASE . '/etc/lightsquid');
+define('LS_GROUPFILE', 'group.cfg.sample');
 
 // default values
 define('LS_DEF_IP2NAME', 'dns');
@@ -62,7 +62,6 @@ define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
 
-define('LS_DEF_GROUP', LS_GROUPSNAMEPATH . '/' . 'group.cfg.sample');
 
 /*
  * Package install/uninstall
@@ -433,6 +432,7 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
+	$lsconf_group_file = LS_CONFIGPATH . "/" . LS_GROUPFILE;
 		
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
@@ -443,7 +443,7 @@ function light2guardian_groupandname() {
 	if (!is_null($lightsquid_config['light2guardian_group'])) {
 		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	} else {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents($lsconf_group_file));
 		}
 	}
 
