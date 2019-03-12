@@ -444,6 +444,7 @@ function light2guardian_groupandname() {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 		}
 	}
+	write_config();
 
 /*
  * Relatórios
@@ -569,11 +570,11 @@ function lightsquid_create_reportdir() {
 		} else {
 			$navto_proto = "http";
 		}
-		header("Location: {$navto_proto}://{$server_host}:{$l ightsquid_config['lighttpd_ls_port']}/");
+		header("Location: {$navto_proto}://{$server_host}:{$lightsquid_config['lighttpd_ls_port']}/");
 		exit;
 	}
-	if (empty($post['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+//	if (empty($post['light2guardian_group'])) {
+//		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	}
 			
 //	if ($post['navto_sqstat'] == 'Open sqstat') {
