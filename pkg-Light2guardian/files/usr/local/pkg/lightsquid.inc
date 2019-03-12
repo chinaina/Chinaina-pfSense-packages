@@ -575,7 +575,6 @@ function lightsquid_create_reportdir() {
 	}
 //	if (empty($post['light2guardian_group'])) {
 //		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-	}
 			
 //	if ($post['navto_sqstat'] == 'Open sqstat') {
 //		header("Location: /sqstat/sqstat.php");
@@ -623,4 +622,5 @@ function lightsquid_create_reportdir() {
 	if ($post['light2guardian_group'] == "") {
 		$input_errors[] = "O campo groups não pode ficar vazio";
 		}
+	}
 ?>
