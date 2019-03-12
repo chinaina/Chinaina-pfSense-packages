@@ -326,7 +326,7 @@
 		if ($_POST['refreshnow'] == "Refresh Now" || $_POST['refreshfull'] == "Refresh Full") {
 			return;
 		}
-		if ($_POST['light2guardian_group'] == "" {
+		if ($_POST['light2guardian_group'] == "") {
 			return;
 		}
 		lightsquid_resync();
