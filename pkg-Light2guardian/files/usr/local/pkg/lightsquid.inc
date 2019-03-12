@@ -565,7 +565,7 @@ function lightsquid_create_reportdir() {
 		if (empty($lightsquid_config['lighttpd_ls_port'])) {
 			$lightsquid_config['lighttpd_ls_port'] = "14902";
 		}
-		if (is_null($lightsquid_config['light2guardian_group'])) {
+		if (empty($lightsquid_config['light2guardian_group'])) {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 		}
 		if (!isset($lightsquid_config['lighttpd_ls_ssl']) || ($lightsquid_config['lighttpd_ls_ssl'] == "on")) {
