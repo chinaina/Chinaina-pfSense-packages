@@ -431,7 +431,7 @@ function lightsquid_resync() {
 
 function light2guardian_groupandname() {
 	global $config;
-	$light2guardian = "Teste";
+	$light2guardian;
 	$lsconf_group_file = LS_CONFIGPATH . "/" . LS_GROUPFILE;
 		
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
