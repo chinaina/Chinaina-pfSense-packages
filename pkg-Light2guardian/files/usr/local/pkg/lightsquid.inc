@@ -433,19 +433,17 @@ function light2guardian_groupandname() {
 	global $config;
 			
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
+		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'];
 	} else {
 		return;
 	}
 	
-	if (!is_null($lightsquid_config['light2guardian_group'])) {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
+	if (!is_null($lightsquid_config)) {
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config));
 	} else {
-		$_POST['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+		$lightsquid_config = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 		}
 	}
-	write_config();
-
 /*
  * Relatórios
  */
@@ -621,8 +619,6 @@ function lightsquid_create_reportdir() {
 			}
 		}
 	}
-	if ($post['light2guardian_group'] == "") {
-		$input_errors[] = "O campo groups não pode ficar vazio";
-		}
-	}
+}
+
 ?>
