@@ -433,15 +433,15 @@ function light2guardian_groupandname() {
 	global $config;
 			
 	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'];
+		$lightsquid_config['light2guardian_group'] = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
 		return;
 	}
 	
-	if (!is_null($lightsquid_config)) {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config));
+	if (!is_null($lightsquid_config['light2guardian_group'])) {
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	} else {
-		$lightsquid_config = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 		}
 	}
 /*
