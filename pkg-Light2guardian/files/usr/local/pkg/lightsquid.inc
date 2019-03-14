@@ -437,13 +437,14 @@ function light2guardian_groupandname() {
 	} else {
 		return;
 	}
+	$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	
 	if (!is_null($lightsquid_config['light2guardian_group'])) {
 		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
 	} else {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-		}
+		return;
 	}
+}
 /*
  * Relatórios
  */
