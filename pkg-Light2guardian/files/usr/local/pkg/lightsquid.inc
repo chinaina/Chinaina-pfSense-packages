@@ -62,8 +62,16 @@ define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
 
-// $config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-
+if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
+		$lightsquid_config['light2guardian_group'] = $config['installedpackages']['lightsquid']['config'][0];
+	} else {
+		return;
+	}
+	if (!is_null($lightsquid_config['light2guardian_group'])) {
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
+	} else {
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	}
 /*
  * Package install/uninstall
  */
@@ -94,10 +102,6 @@ function lightsquid_install() {
 
 	update_status("Starting lightsquid lighttpd Service...");
 	restart_service('lightsquid_web');
-	update_status(" done.\n");
-
-	update_status("Teste...");
-	light2guardian_groupandname();
 	update_status(" done.\n");
 }
 
@@ -429,7 +433,7 @@ function lightsquid_resync() {
 
 /*
  * Groups and Names
- */
+
 
 function light2guardian_groupandname() {
 	global $config;
@@ -445,7 +449,7 @@ function light2guardian_groupandname() {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	}
 }
-
+ */
 /*
  * Relatórios
  */
