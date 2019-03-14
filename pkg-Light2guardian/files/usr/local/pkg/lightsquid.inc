@@ -62,18 +62,6 @@ define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
 
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
-	} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-	}
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {	
-	file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
-	} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
-		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
-	}
 /*
  * Package install/uninstall
  */
@@ -144,6 +132,27 @@ function lightsquid_write_webconfig() {
 	} else {
 		return;
 	}
+	
+/*
+ * Groups and Names
+ */
+ 
+	if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
+	} 
+	if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	}
+	if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {	
+		file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
+	} 
+	if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
+		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
+	}
+
+	/*
+ * Groups and Names End
+ */
 
 	if (empty($lightsquid_config['lighttpd_ls_port'])) {
 		$lightsquid_config['lighttpd_ls_port'] = "14902";
@@ -427,31 +436,11 @@ function lightsquid_resync() {
 	}
 
 	// Set up scheduled reports updates
-	//light2guardian_groupandname();
 	lightsquid_setup_cron(true);
 	lightsquid_write_webconfig();
 	restart_service('lightsquid_web');
 }
 
-/*
- * Groups and Names
-
-
-function light2guardian_groupandname() {
-	global $config;
-			
-	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config['light2guardian_group'] = $config['installedpackages']['lightsquid']['config'][0];
-	} else {
-		return;
-	}
-	if (!is_null($lightsquid_config['light2guardian_group'])) {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
-	} else {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-	}
-}
- */
 /*
  * Relatórios
  */
