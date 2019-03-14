@@ -67,10 +67,11 @@ if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 	} else {
 		return;
 	}
-	if (!is_null($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']['light2guardian_group']));
-	} else {
-		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	if (empty($lightsquid_config['light2guardian_group'])) {
+		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
+	} 
+	if (!empty($lightsquid_config['light2guardian_group'])) {
+		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	}
 /*
  * Package install/uninstall
