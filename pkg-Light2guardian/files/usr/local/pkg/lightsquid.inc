@@ -62,16 +62,17 @@ define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
 
-if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
-		$lightsquid_config['light2guardian_group'] = $config['installedpackages']['lightsquid']['config'][0];
-	} else {
-		return;
-	}
-	if (empty($lightsquid_config['light2guardian_group'])) {
-		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
+if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
 	} 
-	if (!empty($lightsquid_config['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+	}
+if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {	
+	file_put_contents('/usr/local/etc/lightsquid/name.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
+	} 
+if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
+		$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/name.cfg.sample'));
 	}
 /*
  * Package install/uninstall
