@@ -206,6 +206,7 @@
 			<type>textarea</type>
 			<cols>60</cols>
 			<rows>5</rows>
+			<default_value>Teste</default_value>
 			<encoding>base64</encoding>
 		</field>
 		<field>
