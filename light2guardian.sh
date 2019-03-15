@@ -5,12 +5,15 @@ cd /usr/local/etc/lightsquid/
 fetch https://raw.githubusercontent.com/chinaina/Chinaina-pfsense-packages/master/group.cfg.sample
 
 ## Change sample file realname.cfg.sample
+cd /usr/local/etc/lightsquid/
 fetch https://raw.githubusercontent.com/chinaina/Chinaina-pfsense-packages/master/realname.cfg.sample /usr/local/etc/lightsquid/
 
 ## Change config file lightsquid.inc
+cd /usr/local/pkg/
 fetch https://raw.githubusercontent.com/chinaina/Chinaina-pfsense-packages/master/pkg-Light2guardian/files/usr/local/pkg/lightsquid.inc /usr/local/pkg/
 
 ## Change xml file lightsquid.xml
+cd /usr/local/pkg/
 fetch https://raw.githubusercontent.com/chinaina/Chinaina-pfsense-packages/master/pkg-Light2guardian/files/usr/local/pkg/lightsquid.xml /usr/local/pkg/
 
 
