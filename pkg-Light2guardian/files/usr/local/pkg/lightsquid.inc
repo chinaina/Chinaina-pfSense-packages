@@ -35,6 +35,19 @@ if (file_exists('/usr/local/pkg/e2guardian.inc')) {
 	echo "No e2guardian.inc found. You must have E2guardian package installed to use LightSquid.";
 }
 
+if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
+} 
+if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
+	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
+}
+if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
+	file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
+} 
+if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
+	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
+}
+
 define('LIGHTSQUID_BASE', '/usr/local');
 
 // configuration settings
@@ -61,23 +74,6 @@ define('LS_DEF_SKIPURL', 'zzz\.zzz');
 define('LS_DEF_LANG', 'eng');
 define('LS_DEF_TEMPLATE', 'base');
 define('LS_DEF_BARCOLOR', 'orange');
-
-/*
- * Groups and Names
- */
-
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
-} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/group.cfg.sample"));
-}
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {	
-	file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
-} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
-	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents("/usr/local/etc/lightsquid/realname.cfg.sample"));
-}
 
 /*
  * Package install/uninstall
