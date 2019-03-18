@@ -564,11 +564,6 @@ function lightsquid_create_reportdir() {
 		header("Location: {$navto_proto}://{$server_host}:{$lightsquid_config['lighttpd_ls_port']}/");
 		exit;
 	}
-	if (empty($post['light2guardian_group'])) {
-		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-	} else {
-		return;
-	}
 //	if ($post['navto_sqstat'] == 'Open sqstat') {
 //		header("Location: /sqstat/sqstat.php");
 //		exit;
