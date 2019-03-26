@@ -1,5 +1,5 @@
 ######## ESTRUTURA DE PREENCHIMENTO #########
-ENDEREÇO_IP	NUM_GRUPO	NOME_GRUPO
+ENDERECO_IP	NUM_GRUPO	NOME_GRUPO
 
 ################## EXEMPLO ##################
 192.168.0.1	01	Financeiro
