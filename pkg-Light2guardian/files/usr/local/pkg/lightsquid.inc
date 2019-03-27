@@ -452,6 +452,8 @@ function lightsquid_resync() {
  
 function groups_and_names() {
 	
+	global $config;
+	
  	if (is_array($config['installedpackages']['lightsquid']['config'][0])) {
 		$lightsquid_config = $config['installedpackages']['lightsquid']['config'][0];
 	} else {
@@ -471,8 +473,8 @@ function groups_and_names() {
 //	if (empty($lightsquid_config['light2guardian_name'])) {
 		$lightsquid_config['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
 	}
-}	
-	
+}
+
 /*
  * Relatórios
  */
