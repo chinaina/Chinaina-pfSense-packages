@@ -205,7 +205,7 @@
 			<fieldname>light2guardian_group</fieldname>
 			<type>textarea</type>
 			<cols>60</cols>
-			<rows>5</rows>
+			<rows>10</rows>
 			<encoding>base64</encoding>
 		</field>
 		<field>
@@ -213,7 +213,7 @@
 			<fieldname>light2guardian_name</fieldname>
 			<type>textarea</type>
 			<cols>60</cols>
-			<rows>5</rows>
+			<rows>10</rows>
 			<encoding>base64</encoding>
 		</field>
 
