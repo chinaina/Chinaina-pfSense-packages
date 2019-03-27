@@ -462,15 +462,15 @@ function groups_and_names() {
 	
 	if (!empty($lightsquid_config['light2guardian_group'])) {
 		file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($lightsquid_config['light2guardian_group']));
-	} else { 
-//	if (empty($lightsquid_config['light2guardian_group'])) {
+	}
+	if (empty($lightsquid_config['light2guardian_group'])) {
 		$lightsquid_config['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
 	}
 	
 	if (!empty($lightsquid_config['light2guardian_name'])) {
 		file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($lightsquid_config['light2guardian_name']));
-	} else {
-//	if (empty($lightsquid_config['light2guardian_name'])) {
+	}
+	if (empty($lightsquid_config['light2guardian_name'])) {
 		$lightsquid_config['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
 	}
 }
