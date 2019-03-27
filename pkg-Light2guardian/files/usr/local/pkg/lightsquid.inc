@@ -64,7 +64,7 @@ define('LS_DEF_BARCOLOR', 'orange');
 
 /*
  * Groups and Names Function Development
-
+ */
 
 if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
 	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
@@ -78,11 +78,6 @@ if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardi
 if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
 	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
 } 
-
-*/
-
-
-
  
 /*
  * Package install/uninstall
@@ -112,10 +107,6 @@ function lightsquid_install() {
 	lightsquid_write_webconfig();
 	update_status(" done.\n");
 	
-	update_status("Updating Groups and Names ...");
-	groups_and_names();
-	update_status(" done.\n");
-
 	update_status("Starting lightsquid lighttpd Service...");
 	restart_service('lightsquid_web');
 	update_status(" done.\n");
@@ -443,28 +434,7 @@ function lightsquid_resync() {
 	// Set up scheduled reports updates
 	lightsquid_setup_cron(true);
 	lightsquid_write_webconfig();
-	groups_and_names();
 	restart_service('lightsquid_web');
-}
-/*
- * Groups and Names
- */
- 
-function groups_and_names() {
-	
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-	file_put_contents('/usr/local/etc/lightsquid/group.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group']));
-} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'])) {
-	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_group'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/group.cfg.sample'));
-}
-if (!empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
-	file_put_contents('/usr/local/etc/lightsquid/realname.cfg', base64_decode($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name']));
-} 
-if (empty($config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'])) {
-	$config['installedpackages']['lightsquid']['config'][0]['light2guardian_name'] = base64_encode(file_get_contents('/usr/local/etc/lightsquid/realname.cfg.sample'));
-} 
-
 }
 
 /*
