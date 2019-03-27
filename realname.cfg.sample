@@ -1,8 +1,8 @@
-######## ESTRUTURA DE PREENCHIMENTO #########
-IP		NOME
+################# STRUCTURE #################
+<IP_NUMBER>		<NAME>
 
-################## EXEMPLO ##################
-192.168.0.1		Joao
-192.168.0.2		Maria
-192.168.0.3		Roberto
-192.168.0.4		Joana
+################## EXEMPLE ##################
+192.168.0.1		Paul
+192.168.0.2		George
+192.168.0.3		Angelina
+192.168.0.4		Carl

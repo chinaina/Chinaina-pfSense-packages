@@ -1,8 +1,8 @@
-######## ESTRUTURA DE PREENCHIMENTO #########
-ENDERECO_IP	NUM_GRUPO	NOME_GRUPO
+################# STRUCTURE #################
+<IP_NUMBER>	<GROUP_ID_NUMBER>	<GROUP_NAME>
 
-################## EXEMPLO ##################
-192.168.0.1	01	Financeiro
-192.168.0.2	01	Financeiro
-192.168.0.3	02	Administrativo
-192.168.0.4	03	Diretoria
+################## EXEMPLE ##################
+192.168.0.1	01	Administrative
+192.168.0.2	01	Administrative
+192.168.0.3	02	Human Resources
+192.168.0.4	03	Information Tecnology
