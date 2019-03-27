@@ -111,6 +111,10 @@ function lightsquid_install() {
 	update_status("Creating lightsquid web server config ...");
 	lightsquid_write_webconfig();
 	update_status(" done.\n");
+	
+	update_status("Updating Groups and Names ...");
+	groups_and_names();
+	update_status(" done.\n");
 
 	update_status("Starting lightsquid lighttpd Service...");
 	restart_service('lightsquid_web');
